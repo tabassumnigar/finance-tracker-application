@@ -1,0 +1,121 @@
+.dashboard-topbar {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.dashboard-topbar-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 0.75rem;
+  justify-content: stretch;
+  width: 100%;
+}
+
+.dashboard-topbar-actions::-webkit-scrollbar {
+  height: 6px;
+}
+
+.dashboard-topbar-actions::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.4);
+  border-radius: 999px;
+}
+
+.dashboard-action-btn {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.3rem;
+}
+
+.dashboard-action-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(37, 99, 235, 0.34);
+}
+
+.finance-app-root.theme-dark .dashboard-action-btn.primary {
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.55);
+}
+
+.dashboard-action-btn.ghost {
+  background: var(--surface);
+  border-color: rgba(148, 163, 184, 0.45);
+  color: var(--text);
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+}
+
+.finance-app-root.theme-dark .dashboard-action-btn.ghost {
+  background: var(--surface);
+  border-color: rgba(148, 163, 184, 0.2);
+  color: var(--text-soft);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-action-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+.dashboard-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.dashboard-more-actions {
+  position: relative;
+}
+
+.dashboard-more-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(240px, calc(100vw - 32px));
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+  z-index: 5;
+}
+
+.dashboard-more-menu .dashboard-action-btn {
+  justify-content: flex-start;
+  border-color: transparent;
+}
+
+.dashboard-more-menu .dashboard-action-btn.overflow {
+  padding-left: 1.1rem;
+}
+
+.dashboard-more-menu .dashboard-action-btn.overflow:hover {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
+}
+
+.dashboard-action-btn.more-toggle {
+  position: relative;
+}
+
+@media (max-width: 960px) {
+  .dashboard-topbar-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-action-btn {
+    width: 100%;
+  }
+}

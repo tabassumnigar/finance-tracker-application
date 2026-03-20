@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS budgets (
+    id BIGSERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    category_id BIGINT REFERENCES categories(id),
+    period_start TIMESTAMP WITH TIME ZONE NOT NULL,
+    period_end TIMESTAMP WITH TIME ZONE NOT NULL,
+    limit_amount NUMERIC(18,2) NOT NULL,
+    spent NUMERIC(18,2) NOT NULL DEFAULT 0
+);

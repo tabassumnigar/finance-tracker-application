@@ -1,0 +1,352 @@
+.settings-page {
+  padding: 28px;
+}
+
+.settings-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.settings-hero,
+.settings-card,
+.settings-sidebar-card {
+  border: 1px solid #d8e3ea;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.settings-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 60px rgba(17, 39, 93, 0.12);
+  backdrop-filter: blur(24px);
+}
+
+.settings-hero {
+  padding: 32px 36px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.settings-eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1170b8;
+}
+
+.settings-hero h1,
+.settings-card h2 {
+  margin: 0;
+  color: #163047;
+}
+
+.settings-subtitle,
+.settings-card p {
+  margin: 10px 0 0;
+  color: #557084;
+  line-height: 1.6;
+}
+
+.settings-hero-actions,
+.settings-actions,
+.settings-field-row,
+.settings-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.settings-hero-actions {
+  grid-auto-flow: column;
+  align-self: center;
+}
+
+.settings-banner {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(20, 184, 166, 0.12);
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.settings-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.settings-card,
+.settings-sidebar-card {
+  padding: 26px;
+}
+
+.settings-sidebar-card {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  gap: 18px;
+}
+
+.settings-profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(17, 112, 184, 0.1) 0%, rgba(20, 184, 166, 0.12) 100%);
+  border: 1px solid #d8eaf2;
+}
+
+.settings-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1170b8 0%, #14b8a6 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.settings-profile-pill strong,
+.settings-profile-pill span {
+  display: block;
+}
+
+.settings-profile-pill span,
+.settings-sidebar-note {
+  color: #557084;
+  line-height: 1.5;
+}
+
+.settings-sidebar-links {
+  display: grid;
+  gap: 10px;
+}
+
+.settings-nav-chip {
+  min-height: 42px;
+  border-radius: 14px;
+  border: 1px solid #d8e3ea;
+  background: #f8fbfd;
+  color: #163047;
+  font-weight: 700;
+  text-align: left;
+  padding: 0 14px;
+  cursor: default;
+}
+
+.theme-picker {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.theme-option {
+  text-align: left;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid #d8e3ea;
+  background: #f8fbfd;
+  cursor: pointer;
+}
+
+.theme-option strong,
+.theme-option span {
+  display: block;
+}
+
+.theme-option span {
+  margin-top: 6px;
+  color: #557084;
+  line-height: 1.5;
+}
+
+.theme-option.active {
+  border-color: #1170b8;
+  background: rgba(17, 112, 184, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(17, 112, 184, 0.1);
+}
+
+.settings-field,
+.settings-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-field span {
+  font-weight: 700;
+  color: #163047;
+}
+
+.settings-field input,
+.settings-field select {
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1px solid #d8e3ea;
+  background: #f8fbfd;
+  padding: 0 14px;
+}
+
+.settings-field-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.settings-toggle {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid #e4edf3;
+}
+
+.settings-toggle:first-of-type {
+  border-top: 0;
+}
+
+.settings-toggle input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.settings-toggle strong,
+.settings-toggle span {
+  display: block;
+}
+
+.settings-toggle span {
+  margin-top: 4px;
+  color: #557084;
+  line-height: 1.5;
+}
+
+.settings-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.btn {
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: 1px solid #d8e3ea;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, #1170b8 0%, #14b8a6 100%);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #466176;
+}
+
+.btn-danger {
+  background: #fff1f2;
+  color: #be123c;
+  border-color: #fecdd3;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #22c55e 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+.finance-app-root.theme-dark .settings-page {
+  background: linear-gradient(180deg, #0b2836 0%, #061e29 100%);
+}
+
+.finance-app-root.theme-dark .settings-hero,
+.finance-app-root.theme-dark .settings-card,
+.finance-app-root.theme-dark .settings-sidebar-card,
+.finance-app-root.theme-dark .settings-profile-pill,
+.finance-app-root.theme-dark .theme-option,
+.finance-app-root.theme-dark .settings-nav-chip {
+  background: linear-gradient(180deg, rgba(29, 84, 109, 0.95) 0%, rgba(9, 35, 47, 0.98) 100%);
+  border-color: rgba(95, 149, 152, 0.34);
+  color: #f3f4f4;
+}
+
+.finance-app-root.theme-dark .settings-eyebrow,
+.finance-app-root.theme-dark .settings-profile-pill span,
+.finance-app-root.theme-dark .settings-sidebar-note,
+.finance-app-root.theme-dark .settings-subtitle,
+.finance-app-root.theme-dark .settings-card p,
+.finance-app-root.theme-dark .theme-option span,
+.finance-app-root.theme-dark .settings-toggle span {
+  color: rgba(243, 244, 244, 0.76);
+}
+
+.finance-app-root.theme-dark .settings-hero h1,
+.finance-app-root.theme-dark .settings-card h2,
+.finance-app-root.theme-dark .settings-field span,
+.finance-app-root.theme-dark .theme-option strong,
+.finance-app-root.theme-dark .settings-toggle strong {
+  color: #f3f4f4;
+}
+
+.finance-app-root.theme-dark .settings-field input,
+.finance-app-root.theme-dark .settings-field select {
+  background: rgba(6, 30, 41, 0.78);
+  border-color: rgba(95, 149, 152, 0.34);
+  color: #f3f4f4;
+}
+
+.finance-app-root.theme-dark .btn-secondary,
+.finance-app-root.theme-dark .btn-primary,
+.finance-app-root.theme-dark .btn-danger {
+  border-color: rgba(95, 149, 152, 0.34);
+}
+
+.finance-app-root.theme-dark .btn-secondary {
+  background: rgba(6, 30, 41, 0.82);
+  color: #f3f4f4;
+}
+
+@media (max-width: 900px) {
+  .settings-layout,
+  .settings-grid,
+  .settings-field-row,
+  .settings-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-sidebar-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-page {
+    padding: 16px;
+  }
+
+  .settings-hero {
+    padding: 24px;
+    flex-direction: column;
+  }
+
+  .settings-hero-actions {
+    width: 100%;
+    grid-auto-flow: row;
+  }
+}

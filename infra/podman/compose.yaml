@@ -1,0 +1,54 @@
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ../postgres/init:/docker-entrypoint-initdb.d:Z
+      - postgres-data:/var/lib/postgresql/data:Z
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      APP_JWT_SECRET: ${APP_JWT_SECRET}
+      APP_JWT_ACCESS_EXPIRATION: ${APP_JWT_ACCESS_EXPIRATION}
+      APP_JWT_REFRESH_EXPIRATION: ${APP_JWT_REFRESH_EXPIRATION}
+      BACKEND_PORT: ${BACKEND_PORT:-8080}
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      - postgres
+    restart: on-failure
+
+  frontend:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+      FRONTEND_PORT: ${FRONTEND_PORT:-5173}
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    depends_on:
+      - backend
+    restart: on-failure
+
+volumes:
+  postgres-data:

@@ -1,0 +1,8 @@
+target
+.mvn
+*.log
+*.tmp
+*.swp
+*.DS_Store
+.idea
+.vscode
